@@ -6,19 +6,10 @@ import java.io.File;
 import java.time.LocalDate;
 import java.util.*;
 
-/**
- * Hello world!
- *
- */
 public class App
 {
     public static void main( String[] args )
     {
-//        IoManager ioManager = new IoManager();
-//
-//        List<String> list = ioManager.readLines("source_folder/Java Course Topics Summary.md");
-//
-//        list.forEach(System.out::println);
 
         Map<LocalDate,String> serviceHistory = new TreeMap<>();
         serviceHistory.put(LocalDate.parse("2000-01-01"), "Had a fantastic make over. preparing for a movie");
@@ -30,35 +21,16 @@ public class App
         DB5Service.put(LocalDate.parse("1964-01-01"), "large array of gadgets Was added to the car, including an ejector seat, machine guns, a smoke screen, and tyre slashers.");
         Car bondCarDB5 = new Car("Aston Martin", "DB5", "Gray", LocalDate.parse("1963-10-01"),DB5Service);
 
-//        System.out.println("Factory code: " + fordMustang.getFactoryCodeKey());
-
+        System.out.println("Ford Factory code: " + fordMustang.getFactoryCodeKey());
+        System.out.println("DB5 Factory code: " + bondCarDB5.getFactoryCodeKey());
 
         List<Car> carList = new ArrayList<>(Arrays.asList(fordMustang,bondCarDB5));
-
-
-
-//        File file = new File("destination_folder/cars.ser");
-//
-//        CarSerial carSerial = new CarSerial();
-//
-//        carSerial.serializeList(carList, file);
-//
-//        List<Car> fromCarStorage = carSerial.deserializeCars(file);
-//
-//
-//        System.out.println("from File ____");
-//        System.out.println(fromCarStorage.get(0).toString());
-//        System.out.println(fromCarStorage.get(0).getFactoryCodeKey());
-
-
-        // Json Mapping
 
         File jsonFile = new File("destination_folder/cars.json");
 
         JsonIo jsonIo = new JsonIo();
 
         jsonIo.serializeToJson(carList,jsonFile);
-
 
         List<Car> carsFromJson = jsonIo.deserializeFromJson(jsonFile);
         carsFromJson.forEach(System.out::println);
