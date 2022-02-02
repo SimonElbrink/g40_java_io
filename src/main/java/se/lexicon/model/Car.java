@@ -1,6 +1,7 @@
 package se.lexicon.model;
 
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import se.lexicon.data.CarFactoryCodeGenerator;
 
 import java.io.Serializable;
@@ -22,8 +23,10 @@ public class Car implements Serializable {
     private String brand;
     private String model;
     private String color;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private LocalDate productionDate;
     private Map<LocalDate, String> serviceHistory;
+    @JsonIgnore
     private transient String factoryCodeKey; // Should not be saved to any file.
 
 

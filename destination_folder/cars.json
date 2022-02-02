@@ -1,0 +1,20 @@
+[ {
+  "id" : "a543cf0f-5019-49e6-b8e5-69990562ae1d",
+  "brand" : "Ford",
+  "model" : "Shelby",
+  "color" : "Striped Gray and Black",
+  "productionDate" : "1970-04-01",
+  "serviceHistory" : {
+    "2000-01-01" : "Had a fantastic make over. preparing for a movie",
+    "2000-06-09" : "Car has be confirmed to be totally destroyed."
+  }
+}, {
+  "id" : "cf865407-ad0d-4461-9457-4a86db46836e",
+  "brand" : "Aston Martin",
+  "model" : "DB5",
+  "color" : "Gray",
+  "productionDate" : "1963-10-01",
+  "serviceHistory" : {
+    "1964-01-01" : "large array of gadgets Was added to the car, including an ejector seat, machine guns, a smoke screen, and tyre slashers."
+  }
+} ]
